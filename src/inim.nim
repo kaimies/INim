@@ -196,11 +196,11 @@ proc showError(output: string) =
         stdout.flushFile()
         previouslyIndented = false
 
-proc init(preload: string = nil) =
+proc init(preload: string = "") =
     setControlCHook(controlCHook)
     bufferRestoreValidCode()
 
-    if preload == nil:
+    if preload == "":
         # First dummy compilation so next one is faster for the user
         discard compileCode()
         return
