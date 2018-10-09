@@ -76,7 +76,7 @@ proc getFileData(path: string): string =
     try:
         result = path.readFile()
     except:
-        result = nil
+        result = ""
 
 proc compilationSuccess(current_statement, output: string) =
     if len(tempIndentCode) > 0:
